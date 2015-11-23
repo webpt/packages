@@ -44,7 +44,7 @@ class UpdateCommand extends ContainerAwareCommand
         $packages = $this->container->get('doctrine.orm.entity_manager')->getRepository('Terramar\Packages\Entity\Package')->findBy(array('enabled' => true));
 
         $repositories = array_map(function(Package $package) {
-            return $package->getSshUrl();
+            return $package->getWebUrl();
         }, $packages);
 
         foreach ($repositories as $repository) {

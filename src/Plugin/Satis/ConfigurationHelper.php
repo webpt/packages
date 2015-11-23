@@ -64,7 +64,7 @@ class ConfigurationHelper
             ->getResult();
 
         $repositories = array_map(function(PackageConfiguration $config) {
-                return $config->getPackage()->getSshUrl();
+                return $config->getPackage()->getWebUrl();
             }, $packages);
 
         foreach ($repositories as $repository) {
